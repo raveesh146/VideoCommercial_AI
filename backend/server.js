@@ -29,7 +29,7 @@ app.post('/webhook', (req, res) => {
 
   if (status === 'done') {
     console.log('Video URL:', result_url);
-    // Add your logic to handle the video URL here
+
   }
 
   res.status(200).send('Received webhook notification');

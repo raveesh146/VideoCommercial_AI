@@ -8,8 +8,8 @@
 /* Body Styling */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+  background-color: #1a1a2e; /* Dark background for a modern look */
+  color: #ffffff; /* White text for contrast */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,21 +20,24 @@ body {
 
 /* Container Styling */
 .container {
-  background-color: #ffffff;
+  background-color: #16213e; /* Slightly lighter shade for contrast */
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 800px; /* Increased width for a more spacious layout */
   width: 100%;
+  text-align: center; /* Center content inside the container */
   margin: 20px auto;
 }
 
 /* Heading Style */
 h1 {
-  font-size: 32px;
-  color: #333;
+  font-size: 36px;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 25px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
 }
 
 /* Search Bar Styling */
@@ -47,7 +50,7 @@ h1 {
 input[type="text"] {
   padding: 15px;
   font-size: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid #007bff;
   border-radius: 5px 0 0 5px;
   width: 100%;
   max-width: 400px;
@@ -55,7 +58,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #007bff;
+  border-color: #00aaff;
   outline: none;
 }
 
@@ -63,7 +66,7 @@ button.search-button {
   padding: 15px;
   font-size: 18px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #00aaff; /* Bright blue for a techy feel */
   border: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -71,7 +74,7 @@ button.search-button {
 }
 
 button.search-button:hover {
-  background-color: #0056b3;
+  background-color: #0088cc;
   transform: translateY(-2px);
 }
 
@@ -83,18 +86,21 @@ button.search-button:active {
 .image-display {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 30px;
 }
 
 img {
-  max-width: 80%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 50%; 
+  max-height: 300px; 
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  object-fit: cover; /* Maintains aspect ratio */
 }
 
 img:hover {
-  transform: scale(0.8);
+  transform: scale(0.98); /* Slight zoom on hover */
 }
 
 /* Video Display Styling */
@@ -104,13 +110,22 @@ img:hover {
 }
 
 .video-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
+video {
+  max-width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .download-button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #007bff;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #00aaff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -119,25 +134,25 @@ img:hover {
 }
 
 .download-button:hover {
-  background-color: #0056b3;
+  background-color: #0088cc;
 }
 
-p {
-  color: #007bff;
-  font-weight: bold;
+/* Text Area Styling */
+textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+  resize: none;
+  width: 100%;  /* Full width */
+  height: 150px;  /* Set height */
 }
 
-
-video {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
+textarea:focus {
+  border-color: #00aaff;
+  outline: none;
 }
 
 /* Button Styling */
@@ -145,7 +160,7 @@ button {
   padding: 12px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #00aaff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -154,7 +169,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0088cc;
   transform: translateY(-2px);
 }
 
@@ -168,27 +183,4 @@ button:active {
   font-size: 14px;
   margin-top: 10px;
   text-align: center;
-}
-
-/* Text Area Styling */
-textarea {
-  padding: 12px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease;
-  resize: none;
-  width: 100%;  /* Full width */
-  height: 150px;  /* Set height */
-}
-
-textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-/* Add some margin to the bottom of the page */
-.page-bottom-margin {
-  margin-bottom: 30px;
 }
