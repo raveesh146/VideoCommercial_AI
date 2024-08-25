@@ -1,0 +1,169 @@
+/* Universal Reset for better consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Styling */
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Heading Style */
+h1 {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Search Bar Styling */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 15px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  width: 100%;
+  max-width: 400px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button.search-button {
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.search-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button.search-button:active {
+  transform: translateY(1px);
+}
+
+/* Image Display Styling */
+.image-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+img {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(0.8);
+}
+
+/* Video Display Styling */
+.video-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Text Area Styling */
+textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+  resize: none;
+  width: 100%;  /* Full width */
+  height: 150px;  /* Set height */
+}
+
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Add some margin to the bottom of the page */
+.page-bottom-margin {
+  margin-bottom: 30px;
+}
