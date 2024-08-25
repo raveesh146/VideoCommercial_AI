@@ -5,13 +5,24 @@ const VideoGenerator = ({ imageUrl }) => {
   const [text, setText] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
   const [loading, setLoading] = useState(false); // Loading state
+  const [voiceType, setVoiceType] = useState('');
 
   const generateVideo = async () => {
     setLoading(true); // Start loading
+
+        // Determine the voiceId based on voiceType
+        if (voiceType.toLowerCase() === 'female') {
+          voiceId = 'en-US-JennyNeural';
+        } else if (voiceType.toLowerCase() === 'male') {
+          voiceId = 'en-GB-RyanNeural'; 
+        }
+
+
     try {
       const response = await axios.post('https://videocommercial-ai.onrender.com/generate-video', {
         imageUrl,
-        text
+        text,
+        voiceId
       });
       setVideoUrl(response.data.videoUrl);
     } catch (error) {
@@ -28,6 +39,13 @@ const VideoGenerator = ({ imageUrl }) => {
         onChange={(e) => setText(e.target.value)} 
         placeholder="Enter text to be spoken"
       />
+      <input 
+        type="text" 
+        value={voiceType} 
+        onChange={(e) => setVoiceType(e.target.value)} 
+        placeholder="Enter Voice Type (Male/Female)"
+      />
+
       <button onClick={generateVideo}>Generate Video</button>
 
       {loading && <p>Loading...</p>} {/* Display Loading... while generating video */}

@@ -4,7 +4,7 @@ const router = express.Router();
 require('dotenv').config();
 
 router.post('/', async (req, res) => {
-  const { imageUrl, text } = req.body;
+  const { imageUrl, text,voiceId } = req.body;
   const apiKey = process.env.DID_API_KEY;
   const apiUrl = 'https://api.d-id.com/talks';
 
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
         input: text,
         provider: {
           type: "microsoft",
-          voice_id: "en-US-JennyNeural"
+          voice_id: voiceId
         }
       },
       config: {
