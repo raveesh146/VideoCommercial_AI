@@ -12,7 +12,7 @@ const port = process.env.PORT || 10000;
 
 
 app.use(cors({
-  origin: 'https://video-commercial-ai-opo7-ogdkipc48-raveesh146s-projects.vercel.app',
+  origin: 'https://video-commercial-ai-opo7-jgsnwbjie-raveesh146s-projects.vercel.app',
   credentials: true
 }))
 app.use(express.json());
