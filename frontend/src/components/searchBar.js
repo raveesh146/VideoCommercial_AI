@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const fetchPersona = async () => {
+      try {
+        const response = await axios.get('http://localhost:5001/fetch-persona');
+        if (response.data) {
+          const personaDescription = response.data.description;
+          setQuery(personaDescription);
+          onSearch(personaDescription); // Automatically search with the persona
+        }
+      } catch (error) {
+        console.error('Error fetching persona:', error);
+      }
+    };
+
+    fetchPersona();
+  }, [onSearch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,3 +40,4 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+

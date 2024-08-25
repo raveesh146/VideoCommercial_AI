@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const PersonaForm = ({ onSubmit }) => {
   const [persona, setPersona] = useState({
-    name: '',
-    traits: '',
-    preferences: ''
+    model: '',
+    age: '',
+    skinColor: '',
+    personalityTrait: '',
+    voiceType: ''
   });
 
   const handleChange = (e) => {
@@ -12,34 +15,25 @@ const PersonaForm = ({ onSubmit }) => {
     setPersona(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(persona);
+    const description = `${persona.model} ${persona.age} ${persona.skinColor} ${persona.personalityTrait} ${persona.voiceType}`;
+// when voicetype male- send male in api body and vice versa 
+    try {
+      await axios.post('http://localhost:5001/save-persona', { ...persona, description });
+      onSubmit({ ...persona, description });
+    } catch (error) {
+      console.error('Failed to save persona:', error);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        name="name" 
-        value={persona.name} 
-        onChange={handleChange} 
-        placeholder="Persona Name" 
-      />
-      <input 
-        type="text" 
-        name="traits" 
-        value={persona.traits} 
-        onChange={handleChange} 
-        placeholder="Traits" 
-      />
-      <input 
-        type="text" 
-        name="preferences" 
-        value={persona.preferences} 
-        onChange={handleChange} 
-        placeholder="Preferences" 
-      />
+      <input type="text" name="model" value={persona.name} onChange={handleChange} placeholder="Eg: Teen Girl, Young Man" />
+      <input type="text" name="age" value={persona.age} onChange={handleChange} placeholder="Age of Model" />
+      <input type="text" name="skinColor" value={persona.skinColor} onChange={handleChange} placeholder="Skin Color" />
+      <input type="text" name="personalityTrait" value={persona.personalityTrait} onChange={handleChange} placeholder="Personality Trait" />
+      <input type="text" name="voiceType" value={persona.voiceType} onChange={handleChange} placeholder="Voice Type" />
       <button type="submit">Save Persona</button>
     </form>
   );

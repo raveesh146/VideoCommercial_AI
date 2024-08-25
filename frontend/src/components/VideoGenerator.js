@@ -4,15 +4,20 @@ import axios from 'axios';
 const VideoGenerator = ({ imageUrl }) => {
   const [text, setText] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
+  const [loading, setLoading] = useState(false); // Loading state
 
   const generateVideo = async () => {
+    setLoading(true); // Start loading
     try {
       const response = await axios.post('http://localhost:5001/generate-video', {
-        imageUrl, text
+        imageUrl,
+        text
       });
       setVideoUrl(response.data.videoUrl);
     } catch (error) {
       console.error('Error generating video:', error);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -25,10 +30,12 @@ const VideoGenerator = ({ imageUrl }) => {
       />
       <button onClick={generateVideo}>Generate Video</button>
 
+      {loading && <p>Loading...</p>} {/* Display Loading... while generating video */}
+
       {videoUrl && (
         <div className="video-display">
           <h3>Your Video:</h3>
-          <video src={videoUrl} controls  />
+          <video src={videoUrl} controls />
           <br />
           <button 
             className="download-button" 

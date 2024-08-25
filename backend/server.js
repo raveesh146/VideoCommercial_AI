@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 app.use('/fetch-image',bingV7route)
-app.use('/create-persona',creatPersonaRoute)
+app.use('/',creatPersonaRoute)
 app.use('/generate-video',generateVideoRoute)
 
 app.post('/webhook', (req, res) => {
