@@ -5,7 +5,6 @@ const UserPersonaSchema = new mongoose.Schema({
   age: { type: String, required: true },
   skinColor: { type: String, required: true },
   personalityTrait: { type: String, required: true },
-  voiceType: { type: String, required: true },
   description: { type: String, required: true }
 });
 

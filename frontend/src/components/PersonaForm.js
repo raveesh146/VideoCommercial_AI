@@ -7,7 +7,6 @@ const PersonaForm = ({ onSubmit }) => {
     age: '',
     skinColor: '',
     personalityTrait: '',
-    voiceType: ''
   });
 
   const handleChange = (e) => {
@@ -17,7 +16,7 @@ const PersonaForm = ({ onSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const description = `${persona.model} ${persona.age} ${persona.skinColor} ${persona.personalityTrait} ${persona.voiceType}`;
+    const description = `${persona.model} ${persona.age} ${persona.personalityTrait} ${persona.skinColor}`;
 // when voicetype male- send male in api body and vice versa 
     try {
       await axios.post('https://videocommercial-ai.onrender.com/save-persona', { ...persona, description });
@@ -33,8 +32,7 @@ const PersonaForm = ({ onSubmit }) => {
       <input type="text" name="age" value={persona.age} onChange={handleChange} placeholder="Age of Model" />
       <input type="text" name="skinColor" value={persona.skinColor} onChange={handleChange} placeholder="Skin Color" />
       <input type="text" name="personalityTrait" value={persona.personalityTrait} onChange={handleChange} placeholder="Personality Trait" />
-      <input type="text" name="voiceType" value={persona.voiceType} onChange={handleChange} placeholder="Voice Type" />
-      <button type="submit">Save Persona</button>
+      <button type="submit">Choose Model</button>
     </form>
   );
 };
