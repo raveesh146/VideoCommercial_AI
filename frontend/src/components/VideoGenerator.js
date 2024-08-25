@@ -9,7 +9,7 @@ const VideoGenerator = ({ imageUrl }) => {
 
   const generateVideo = async () => {
     setLoading(true); // Start loading
-
+    let voiceId=''
         // Determine the voiceId based on voiceType
         if (voiceType.toLowerCase() === 'female') {
           voiceId = 'en-US-JennyNeural';
