@@ -10,7 +10,11 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5001;
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://vercel.com/raveesh146s-projects/video-commercial-ai-opo7',
+  credentials: true
+}))
 app.use(express.json());
 app.use(bodyParser.json());
 
