@@ -9,7 +9,7 @@ const VideoGenerator = ({ imageUrl }) => {
   const generateVideo = async () => {
     setLoading(true); // Start loading
     try {
-      const response = await axios.post('http://localhost:5001/generate-video', {
+      const response = await axios.post('https://videocommercial-ai.onrender.com/generate-video', {
         imageUrl,
         text
       });

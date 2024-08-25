@@ -20,7 +20,7 @@ const PersonaForm = ({ onSubmit }) => {
     const description = `${persona.model} ${persona.age} ${persona.skinColor} ${persona.personalityTrait} ${persona.voiceType}`;
 // when voicetype male- send male in api body and vice versa 
     try {
-      await axios.post('http://localhost:5001/save-persona', { ...persona, description });
+      await axios.post('https://videocommercial-ai.onrender.com/save-persona', { ...persona, description });
       onSubmit({ ...persona, description });
     } catch (error) {
       console.error('Failed to save persona:', error);

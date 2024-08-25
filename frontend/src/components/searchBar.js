@@ -7,7 +7,7 @@ const SearchBar = ({ onSearch }) => {
   useEffect(() => {
     const fetchPersona = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/fetch-persona');
+        const response = await axios.get('https://videocommercial-ai.onrender.com/fetch-persona');
         if (response.data) {
           const personaDescription = response.data.description;
           setQuery(personaDescription);

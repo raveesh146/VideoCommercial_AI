@@ -11,7 +11,7 @@ const ImageFetcher = () => {
 
   const fetchImage = async (query) => {
     try {
-      const response = await axios.get('http://localhost:5001/fetch-image', {
+      const response = await axios.get('https://videocommercial-ai.onrender.com/fetch-image', {
         params: { q: query }
       });
       setImageUrl(response.data.url);
