@@ -9,6 +9,7 @@ router.post('/', async (req, res) => {
   const apiUrl = 'https://api.d-id.com/talks';
 
   try {
+    console.log(voiceId)
     const startResponse = await axios.post(apiUrl, {
       source_url: imageUrl,
       script: {
@@ -16,7 +17,7 @@ router.post('/', async (req, res) => {
         input: text,
         provider: {
           type: "microsoft",
-          // voice_id: voiceId
+          voice_id: voiceId
         }
       },
       config: {
@@ -29,6 +30,7 @@ router.post('/', async (req, res) => {
         'content-type': 'application/json',
         'Authorization': `Basic ${apiKey}`
       }
+
     });
 
     const { id } = startResponse.data;
