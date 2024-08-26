@@ -11,14 +11,16 @@ const VideoGenerator = ({ imageUrl }) => {
     setLoading(true); // Start loading
     let voiceId=''
         // Determine the voiceId based on voiceType
-        if (voiceType.toLowerCase() === 'female') {
+        if (voiceType.toLowerCase() == 'female') {
           voiceId = 'en-US-JennyNeural';
-        } else if (voiceType.toLowerCase() === 'male') {
+        } else if (voiceType.toLowerCase() == 'male') {
           voiceId = 'en-GB-RyanNeural'; 
         }
 
 
     try {
+      console.log(voiceId);
+      
       const response = await axios.post('https://videocommercial-ai.onrender.com/generate-video', {
         imageUrl,
         text,
