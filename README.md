@@ -3,7 +3,7 @@
 **Hosted live on Vercel:** [https://video-commercial-ai-opo7.vercel.app/](https://video-commercial-ai-opo7.vercel.app/)
 
 **NOTE : Backend deployed on Render may not respond since it becomes inactive after sometime on the free plan**
-**Render API Endpoint:** [https://videocommercial-ai.onrender.com](https://videocommercial-ai.onrender.com)
+**BackEnd Deployed on Render :** [https://videocommercial-ai.onrender.com](https://videocommercial-ai.onrender.com)
 
 
 ## Overview
@@ -52,9 +52,11 @@ git clone https://github.com/raveesh146/VideoCommercial_AI
 ```
 
 **Create a .env file in the backend directory and include the following**
+```bash
 BING_API_KEY=your_bing_api_key
 DID_API_KEY=your_did_api_key
 MONGODB_URL=your_mongodb_url
+```
 
 
 open terminal in the backend folder 
