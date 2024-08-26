@@ -4,13 +4,13 @@ import axios from 'axios';
 const VideoGenerator = ({ imageUrl }) => {
   const [text, setText] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false); 
   const [voiceType, setVoiceType] = useState('');
 
   const generateVideo = async () => {
-    setLoading(true); // Start loading
+    setLoading(true);
     let voiceId=''
-        // Determine the voiceId based on voiceType
+
         if (voiceType.toLowerCase() == 'female') {
           voiceId = 'en-US-JennyNeural';
         } else if (voiceType.toLowerCase() == 'male') {

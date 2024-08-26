@@ -49,7 +49,7 @@ git clone https://github.com/raveesh146/VideoCommercial_AI
 
 ```
 
-# Create a .env file in the backend directory and include the following
+**Create a .env file in the backend directory and include the following**
 BING_API_KEY=your_bing_api_key
 DID_API_KEY=your_did_api_key
 MONGODB_URL=your_mongodb_url
@@ -66,6 +66,7 @@ open terminal in the frontend folder and start react app
 cd frontend
 npm install
 npm start
+```
 
 
 The application will be available at http://localhost:3000 in your web browser.
