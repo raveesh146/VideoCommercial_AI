@@ -3,6 +3,7 @@
 **Hosted live on Vercel:** [https://video-commercial-ai-opo7.vercel.app/](https://video-commercial-ai-opo7.vercel.app/)
 
 **NOTE : Backend deployed on Render may not respondsince it becomes inactive after sometime on the free plan, If not already running it takes 50secs or more after the first request is sent**
+
 **BackEnd Deployed on Render :** [https://videocommercial-ai.onrender.com](https://videocommercial-ai.onrender.com)
 
 
